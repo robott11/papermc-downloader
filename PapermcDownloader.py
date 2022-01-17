@@ -53,7 +53,9 @@ def main():
     print(Fore.GREEN + "Downloading " + paperFileName + "...")
 
     download = requests.get(url, allow_redirects=True)
-    open(paperFileName, "wb").write(download.content)
+    jarFile = open(paperFileName, "wb")
+    jarFile.write(download.content)
+    jarFile.close()
 
     print("Download finished")    
 
